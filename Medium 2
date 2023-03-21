@@ -1,0 +1,53 @@
+//Medium 2 
+
+//Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+// code is in C++
+
+#include <iostream>
+
+using namespace std;
+
+void repeatelement(int a[], int n)
+{
+    
+    for (int i=0;i<n;i++)
+    {
+        int count = 0;
+        // start the count for individual element
+        for (int j=i; j<n; j++)
+        {
+            if (a[i]==a[j])
+            {
+                count++;
+               
+            }
+            
+        }
+        if(count > n/3)
+        {
+            std::cout<< a[i];
+            
+        }
+    }
+   
+}
+
+
+int main() 
+
+{
+    int n;
+    std::cout<<"enter the size of the array:";
+    std::cin>>n;
+    int a[n];
+    std::cout<<"enter the array elements:";
+    for (int i=0;i<n;i++)
+    {
+        std::cin>>a[i];
+    }
+    
+    repeatelement(a,n);
+    return 0;
+}
+
+// the code has been compiled and ran on progamiz.com and outputs are verified.
