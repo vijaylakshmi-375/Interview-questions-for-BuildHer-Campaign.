@@ -1,0 +1,37 @@
+// Hard 3
+//Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
+
+#include <iostream>
+#include<string.h>
+#include<cstring>
+
+using namespace std;
+
+int countones( int n)
+{
+std::cout << "enter the number:";
+std::cin>>n;
+  // taking the number  
+int count = 0;
+
+for (int i=0;i<n+1;i++)
+{
+    string s = to_string(i);
+    // looping over the numbers and converting each integer into string
+    for (int j = 0; j<= s.length(); j++)
+    {
+        if (s[j]== '1')
+           { count++;}
+        // looping over each string to count the 1s present in them
+    }
+}
+ std::cout<<count;
+}
+int main()
+{
+    
+    int n;
+    countones(n);
+    
+}
+// code has been compiled and run on progamiz.com and the output is verified.
