@@ -1,18 +1,39 @@
-#Easy 1
-#Given a string s consisting of words and spaces, return the length of the last word in the string. 
-#code is in python
+//Easy 3
+//Given an integer numRows, return the first numRows of Pascal's triangle.
+// the code is in C++
+#include <iostream>
 
- def print_lastwordlength():  # function to get the length of the last word
-        word = input("enter the word:")
-        word.strip() # removes the white spaces off at the begining and after the completeion of the sentence entered.
-        l = len(word)
-        count=0
-        for i in reversed (range (0,l+1)): # navigate the sentence from the last as to get the last word first
-            if(word[i]!= ' '):  # if the there's no white space encounered, its still the last word
-                count= count+1  # counts the number of the words until the whitespace
-        
-            break # breaks right after the first whitespace since its completed counting letters in the last word.
+using namespace std;
+
+void pascals (int n) // numRows
+{
+    int tria[n][n];
+    for (int i= 0;i<n;i++)
+    {   std::cout<<" "<<"[";
+        for (int j=0; j<= i; j++ )
+        {
+            if(i==j || j==0)
+            {
+                tria[i][j]=1;
+              std::cout<<"["<<tria[i][j]<<"]," ; 
+            }
+            else 
+            {
+                tria[i][j] = tria[i-1][j-1] + tria[i-1][j];
+             std::cout<<"["<<tria[i][j]<<"]," ;  
+            } 
+            
+        }std::cout<<"] ,";
+    } 
+}
+
+int main() {
     
-        print(count)
 
-    print_lastwordlength()
+    int n;
+    std::cout << "enter the number of rows:";
+    std::cin>>n; // numRows
+    pascals(n);
+
+    return 0;
+}
